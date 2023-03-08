@@ -5,4 +5,5 @@ export interface User {
   id: number;
   profilePic?: string;
   roles: string;
+  password?: string;
 }
