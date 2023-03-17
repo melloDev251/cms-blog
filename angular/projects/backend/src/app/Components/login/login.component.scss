@@ -2,9 +2,17 @@ input.ng-invalid.ng-touched {
   border-color: red;
 }
 
+// .form-control {
+//   border: 1px solid #ced4da; /* Définit une bordure par défaut */
+// }
+
 input.ng-valid {
   border-color: green;
 }
+
+// input.ng-invalid.ng-touched.ng-errors {
+//   border-color: red;
+// }
 
 .form-floating {
   position: relative;
@@ -13,7 +21,7 @@ input.ng-valid {
 .icon {
   position: absolute;
   right: 20px;
-  top:25%;
+  top: 25%;
 
   i {
     font-size: 25px;

@@ -5,23 +5,36 @@
         <div class="row justify-content-center">
           <div class="col-lg-5">
             <div class="card shadow-lg border-0 rounded-lg mt-5">
-              <div class="card-header"><h3 class="text-center text-dark font-weight-light my-4">Login</h3></div>
+              <div class="card-header">
+                <h3 class="text-center text-dark font-weight-light my-4">
+                  Login
+                </h3>
+              </div>
               <div class="card-body">
                 <form #login="ngForm" (ngSubmit)="userLogin(login)">
                   <div class="form-floating mb-3">
-                    <input class="form-control" id="inputEmail" #email="ngModel" type="email" placeholder="name@example.com" name="email" ngModel required/>
+                    <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com"
+                      #email="ngModel" name="email" ngModel required pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$" />
                     <div class="icon">
-                      <span  *ngIf="!email.errors && email.touched"><i class="pi pi-check text-success"></i></span>
-                      <span  *ngIf="email.errors && email.touched"><i class="pi pi-times text-danger"></i></span>
+                      <span *ngIf="!email.errors && email.touched"><i class="pi pi-check text-success"></i></span>
+                      <span *ngIf="email.errors && email.touched"><i class="pi pi-times text-danger"></i></span>
                     </div>
-                    <label for="inputEmail" class="text-dark">Email address</label>
-                    <span class="d-block text-danger" *ngIf="email.touched && email.invalid">Email is mandatory</span>
+                    <label for="inputEmail">Email address</label>
+                    <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">
+                      <div *ngIf="email.errors?.required">
+                        Email is required
+                      </div>
+                      <div *ngIf="email.errors?.pattern">
+                        Email must be a valid email address
+                      </div>
+                    </div>
                   </div>
                   <div class="form-floating mb-3">
-                    <input class="form-control" id="inputPassword" type="password" #pass="ngModel" placeholder="Password" name="password" ngModel required/>
+                    <input class="form-control" id="inputPassword" type="password" #pass="ngModel"
+                      placeholder="Password" name="password" ngModel required />
                     <div class="icon">
-                      <span  *ngIf="!pass.errors && pass.touched"><i class="pi pi-check text-success"></i></span>
-                      <span  *ngIf="pass.errors && pass.touched"><i class="pi pi-times text-danger"></i></span>
+                      <span *ngIf="!pass.errors && pass.touched"><i class="pi pi-check text-success"></i></span>
+                      <span *ngIf="pass.errors && pass.touched"><i class="pi pi-times text-danger"></i></span>
                     </div>
                     <label for="inputPassword" class="text-dark">Password</label>
                     <span class="d-block text-danger" *ngIf="pass.touched && !pass.dirty">Password is mandatory</span>
@@ -32,13 +45,19 @@
                   </div>
                   <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                     <a class="small" href="#">Forgot Password?</a>
-                    <button type="submit" class="btn btn-primary" [disabled]="login.invalid || login.pending">Login</button>
+                    <button type="submit" class="btn btn-primary" [disabled]="login.invalid || login.pending">
+                      Login
+                    </button>
                   </div>
                 </form>
               </div>
               <div class="card-footer text-center py-3">
-                <div class="small"><a routerLink="/register">Need an account? Sign up!</a></div>
-                <div class="small my-3"><a href="http://localhost:4200">Go To Website</a></div>
+                <div class="small">
+                  <a routerLink="/register">Need an account? Sign up!</a>
+                </div>
+                <div class="small my-3">
+                  <a href="http://localhost:4200">Go To Website</a>
+                </div>
               </div>
             </div>
           </div>

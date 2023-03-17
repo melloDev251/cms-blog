@@ -18,7 +18,7 @@ import {CategoryComponent} from './Components/category/category.component';
 import {TabViewModule} from "primeng/tabview";
 import {InputTextModule} from "primeng/inputtext";
 import {InputTextareaModule} from "primeng/inputtextarea";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule, EmailValidator} from "@angular/forms";
 import {ButtonModule} from "primeng/button";
 import {ProgressBarModule} from "primeng/progressbar";
 import {ToastModule} from "primeng/toast";
@@ -55,10 +55,12 @@ import { MainComponent } from './Components/main/main.component';
     ProgressBarModule,
     ToastModule,
     FormsModule,
+    ReactiveFormsModule,
     ButtonModule,
     EditorModule
   ],
   providers: [
+    EmailValidator,
     MessageService,
     {
       provide: HTTP_INTERCEPTORS,
