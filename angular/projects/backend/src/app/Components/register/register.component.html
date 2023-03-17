@@ -49,10 +49,8 @@
                       <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com"
                         formControlName="email" />
                       <div class="icon">
-                        <span *ngIf="!f.email.errors && f.email.touched"><i
-                            class="pi pi-check text-success"></i></span>
-                        <span *ngIf="f.email.errors && f.email.touched"><i
-                            class="pi pi-times text-danger"></i></span>
+                        <span *ngIf="!f.email.errors && f.email.touched"><i class="pi pi-check text-success"></i></span>
+                        <span *ngIf="f.email.errors && f.email.touched"><i class="pi pi-times text-danger"></i></span>
                       </div>
                       <label for="inputEmail">Email address</label>
                       <div *ngIf="!submitted && f.email.errors && f.email.touched" class="text-danger">
@@ -69,8 +67,14 @@
                         <div class="form-floating mb-3 mb-md-0">
                           <input class="form-control" id="inputPassword" type="password" placeholder="Create a password"
                             formControlName="password" />
+                          <div class="icon">
+                            <span *ngIf="!f.password.errors && f.password.touched"><i
+                                class="pi pi-check text-success"></i></span>
+                            <span *ngIf="f.password.errors && f.password.touched"><i
+                                class="pi pi-times text-danger"></i></span>
+                          </div>
                           <label for="inputPassword">Password</label>
-                          <div *ngIf="submitted && f.password.errors" class="text-danger">
+                          <div *ngIf="!submitted && f.password.errors && f.password.touched" class="text-danger">
                             <div *ngIf="f.password.errors.required">
                               Password is required
                             </div>
@@ -84,8 +88,15 @@
                         <div class="form-floating mb-3 mb-md-0">
                           <input class="form-control" id="inputPasswordConfirm" type="password"
                             placeholder="Confirm password" formControlName="confirmPassword" />
+                          <div class="icon">
+                            <span *ngIf="!f.confirmPassword.errors && f.confirmPassword.touched"><i
+                                class="pi pi-check text-success"></i></span>
+                            <span *ngIf="f.confirmPassword.errors && f.confirmPassword.touched"><i
+                                class="pi pi-times text-danger"></i></span>
+                          </div>
                           <label for="inputPasswordConfirm">Confirm Password</label>
-                          <div *ngIf="submitted && f.confirmPassword.errors" class="text-danger">
+                          <div *ngIf="!submitted && f.confirmPassword.errors && f.confirmPassword.touched"
+                            class="text-danger">
                             <div *ngIf="f.confirmPassword.errors.required">
                               Confirm password is required
                             </div>
