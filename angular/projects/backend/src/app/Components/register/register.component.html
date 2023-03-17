@@ -22,7 +22,7 @@
                             <span *ngIf="!f.firstname.errors && f.firstname.touched"><i
                                 class="pi pi-check text-success"></i></span>
                             <span *ngIf="f.firstname.errors && f.firstname.touched"><i
-                                class="pi pi-times text-danger"></i></span>
+                                class="pi pi-ti  text-danger"></i></span>
                           </div>
                           <label for="inputFirstName">First name</label>
                           <span class="d-block text-danger" *ngIf="f.firstname.touched && f.firstname.invalid">First
@@ -141,3 +141,4 @@
     </div>
   </div>
 </div>
+<p-toast position="top-center"></p-toast>
