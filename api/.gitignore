@@ -37,3 +37,5 @@ lerna-debug.log*
 
 # Others folder
 uploads
+
+.env

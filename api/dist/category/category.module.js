@@ -18,8 +18,8 @@ let CategoryModule = class CategoryModule {
 CategoryModule = __decorate([
     (0, common_1.Module)({
         imports: [
-            (0, common_1.forwardRef)(() => post_module_1.PostModule),
             typeorm_1.TypeOrmModule.forFeature([category_entity_1.Category]),
+            (0, common_1.forwardRef)(() => post_module_1.PostModule),
         ],
         controllers: [category_controller_1.CategoryController],
         providers: [category_service_1.CategoryService],

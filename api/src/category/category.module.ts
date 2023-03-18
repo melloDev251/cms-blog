@@ -7,8 +7,8 @@ import { PostModule } from '../post/post.module';
 
 @Module({
   imports: [
-    forwardRef(() => PostModule),
     TypeOrmModule.forFeature([Category]),
+    forwardRef(() => PostModule),
   ],
   controllers: [CategoryController],
   providers: [CategoryService],

@@ -8,11 +8,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Post = void 0;
 const typeorm_1 = require("typeorm");
 const category_entity_1 = require("../../category/entities/category.entity");
-const slugify_1 = require("slugify");
+const slugify_1 = __importDefault(require("slugify"));
 const user_entity_1 = require("../../auth/entities/user.entity");
 const class_transformer_1 = require("class-transformer");
 let Post = class Post {

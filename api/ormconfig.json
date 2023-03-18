@@ -1,0 +1,14 @@
+{
+  "type": "mysql",
+  "host": "localhost",
+  "port": 3306,
+  "username": "root",
+  "password": "",
+  "database": "blog",
+  "charset": "utf8mb4",
+  "timezone": "+00:00",
+  "entities": ["src/**/*.entity.ts"],
+  "autoLoadEntities": true,
+  "synchronize": true,
+  "keepConnectionAlive": true
+}
